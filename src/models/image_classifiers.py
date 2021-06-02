@@ -7,7 +7,6 @@ from torchvision.models.densenet import model_urls as densenet_models_urls
 from torchvision.models.googlenet import model_urls as googlenet_models_urls
 from torchvision.models.inception import model_urls as inception_models_urls
 from torchvision.models.mnasnet import _MODEL_URLS as mnasnet_models_urls
-from torchvision.models.mobilenet import model_urls as mobilenet_models_urls
 from torchvision.models.resnet import model_urls as resnet_models_urls
 from torchvision.models.shufflenetv2 import model_urls as shufflenetv2_models_urls
 from torchvision.models.squeezenet import model_urls as squeezenet_models_urls
@@ -15,7 +14,7 @@ from torchvision.models.vgg import model_urls as vgg_models_urls
 
 ALL_AVAILABLE_MODELS = [model_url for models_urls in
                         [alexnet_models_urls, densenet_models_urls, googlenet_models_urls, inception_models_urls,
-                         mnasnet_models_urls, mobilenet_models_urls, resnet_models_urls, shufflenetv2_models_urls,
+                         mnasnet_models_urls, resnet_models_urls, shufflenetv2_models_urls,
                          squeezenet_models_urls, vgg_models_urls] for model_url in models_urls.keys()]
 
 
