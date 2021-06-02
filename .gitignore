@@ -140,3 +140,9 @@ cython_debug/
 
 # vscode folder
 .vscode
+
+# custom scripts
+*.sh
+
+# gdc exe
+gdc-client
