@@ -4,8 +4,8 @@ import os
 import argparse
 from time import gmtime, strftime
 
-from code import get_logger
-from code.data_processing import case_factory, svs_factory
+from src import get_logger
+from src.data_processing import case_factory, svs_factory
 
 desired_magnification = 20
 desired_tile_width = 224
@@ -42,7 +42,7 @@ def get_parser():
 
 
 def main(output_folder, do_download, gdc_executable, manifest_filepath, source_slides_folder):
-    logger = get_logger(filename_handler='code.data_processing.' + os.path.basename(__file__) +
+    logger = get_logger(filename_handler='src.data_processing.' + os.path.basename(__file__) +
                                          '_' + strftime("%Y-%m-%d_%H:%M:%S", gmtime()) + '.log')
 
     logger.info('Data_processing control parameters:')

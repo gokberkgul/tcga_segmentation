@@ -8,7 +8,7 @@ import imageio
 import shutil
 from concurrent import futures
 
-from code import N_PROCESSES
+from src import N_PROCESSES
 from ext import deepzoom_tile
 
 

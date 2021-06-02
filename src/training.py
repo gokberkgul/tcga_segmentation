@@ -14,13 +14,13 @@ import torch.optim as optim
 import torch.utils.data
 from torch.utils.tensorboard import SummaryWriter
 
-from code import N_PROCESSES, get_logger
-from code.data_processing.case_factory import split_svs_samples_casewise
-from code.data_processing.pytorch_dataset import Dataset
-from code.models.image_classifiers import instantiate_model
-from code.models.mil_wrapper import MaxMinMIL
-from code.data_processing.main import main as end_to_end_data_preprocessing
-from code.data_processing.main import get_parser as pre_processing_get_parser
+from src import N_PROCESSES, get_logger
+from src.data_processing.case_factory import split_svs_samples_casewise
+from src.data_processing.pytorch_dataset import Dataset
+from src.models.image_classifiers import instantiate_model
+from src.models.mil_wrapper import MaxMinMIL
+from src.data_processing.main import main as end_to_end_data_preprocessing
+from src.data_processing.main import get_parser as pre_processing_get_parser
 
 
 def define_args():
@@ -238,7 +238,7 @@ def perform_epoch(model, optimizer, epoch, dataloader, hyper_parameters, is_trai
 
 def main(hyper_parameters):
     prefix_time = strftime("%Y-%m-%d %H:%M:%S", gmtime())
-    logger = get_logger(filename_handler='code.' + __file__ + '_' + prefix_time + '.log',
+    logger = get_logger(filename_handler='src.' + __file__ + '_' + prefix_time + '.log',
                         verbose=hyper_parameters['verbose'])
     logger.info('Hyper parameters')
     logger.info(pprint.pformat(hyper_parameters, indent=4))
