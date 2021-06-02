@@ -102,7 +102,7 @@ def main(output_folder, do_download, gdc_executable, manifest_filepath, source_s
         if len(slides_filepaths) == 0:
             slides_filepaths = svs_factory.list_slides_in_folder(source_slides_folder, with_supfolder=True)
         md5sums = ['no_md5sum'] * len(slides_filepaths)
-        cases_ids = ['no_case_id'] * len(slides_filepaths)
+        cases_ids = [slide_filepath.split("/")[-1][:12] for slide_filepath in slides_filepaths]
 
     # Tile all slides into super-patches
     has_been_tiled_filename = 'has_been_tiled_mag%d' % desired_magnification
