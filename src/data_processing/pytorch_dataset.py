@@ -97,7 +97,7 @@ class Dataset(torch.utils.data.dataset.Dataset):
                 break
 
             all_slide_files = list(filter(lambda f: os.path.isfile(os.path.join(slide_folder, f)),
-                                          os.listdir(slide_folder)))
+                                          [x.decode() for x in os.listdir(slide_folder)]))
 
             # Seek and save label, case_id and summary files: expects 1 and only 1 for each
             for data_filename in [label_filename, case_id_filename, summary_filename]:
