@@ -38,7 +38,7 @@ pip install -r requirements.txt
 the associated manifest file, and place it in a `source_folder`
 2. Launch the download and pre-processing pipeline with:
 <pre>
-python -m code.data_processing.main --gdc <i>gdc_executable_path</i> source_folder
+python -m src.data_processing.main --gdc <i>gdc_executable_path</i> source_folder
 </pre>
 
 This script first downloads all files in the manifest file, then tiles WSI, extracts tiles of a given magnification, 
@@ -49,10 +49,10 @@ removes background tiles, and finally seeks to extract per-slide binary labels f
 
 After data download and pre-processing has been performed, launch the training pipeline using:
 ```
-python -m code.training --preprocessed-data-folder ./data/preprocessed --alpha 0.1 --beta 0. --max-bag-size 100
+python -m src.training --preprocessed-data-folder ./data/preprocessed --alpha 0.1 --beta 0. --max-bag-size 100
 ```
 
-Many parameters are tunable, see `python -m code.training --help`
+Many parameters are tunable, see `python -m src.training --help`
 
 More informations about the training pipeline, including available imaging models 
 [here _(in construction)_](code/README.md).
