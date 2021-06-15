@@ -154,6 +154,8 @@ def move_and_filter_tiles_folders(tiles_folders, classes, slides_id, cases_ids, 
             new_filepath = os.path.join(output_folder, slide_id, os.path.basename(img_filepath))
             shutil.copyfile(os.path.abspath(img_filepath),
                             os.path.abspath(new_filepath))
+            with open(os.path.join(new_folderpath, 'background_percentages.txt'), 'a') as f:
+                f.write(new_filepath.split("/")[-1] + ", " + str(percent_background) + '\n')
 
     assert len(tiles_folders) == len(classes) == len(slides_id) == len(cases_ids)
 
